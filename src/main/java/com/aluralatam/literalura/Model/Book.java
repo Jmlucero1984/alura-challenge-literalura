@@ -8,15 +8,16 @@ import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "books", uniqueConstraints = {
-        @UniqueConstraint(columnNames = "title")
+        @UniqueConstraint(columnNames = "id")
 })
 public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true)
     private Long id;
     private Integer idBook;
-    @Column(unique = true)
+
     private String title;
     private String subjects;
     private String bookshelves;
@@ -108,12 +109,14 @@ public class Book {
     @Override
     public String toString() {
         return  "IdBook=" + idBook +
-                ", Title='" + title + '\'' +
-                ", Subjects='" + subjects + '\'' +
-                ", Bookshelves='" + bookshelves + '\'' +
-                ", Languages='" + languages + '\'' +
-                ", Copyright=" + copyright +
-                ", Media_type='" + media_type + '\'' +
-                ", Download_count=" + download_count;
+                ", Titulo: '" + title + '\'' +
+                ", Género: '" + subjects + '\'' +
+                ", Colecciòn: '" + bookshelves + '\'' +
+                ", Idioma= '" + languages + '\'' +
+                ", Copyright: " + (copyright?"Tiene":"No Tiene") +
+                ", Cantidad de Descargas: " + download_count;
     }
+
+
+
 }

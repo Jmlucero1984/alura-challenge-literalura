@@ -11,6 +11,8 @@ public interface BookRepository extends JpaRepository<Book, Long> {
 
     Book findByTitle(String title);
 
+    Book findById(Integer id);
+
     @Query("select distinct l.languages from Book l")
     List<String> findAllLanguages();
 

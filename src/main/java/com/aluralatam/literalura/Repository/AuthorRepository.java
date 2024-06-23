@@ -10,9 +10,12 @@ public interface AuthorRepository extends JpaRepository<Author, Long> {
 
     Author findByName(String name);
 
+
+
+
     @Query("select a from Author a WHERE a.type = 'author'")
-    List< Author> findByTypeEqualsAuthor();
+    List<Author> findByTypeEqualsAuthor();
 
     @Query("select a from Author a WHERE a.birthYear<:livingYear AND a.deathYear>:livingYear AND a.type='author'")
-    List< Author> findByLivingAuthorGivenYear(Integer livingYear);
+    List<Author> findByLivingAuthorGivenYear(Integer livingYear);
 }

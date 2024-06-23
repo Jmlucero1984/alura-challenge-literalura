@@ -9,11 +9,14 @@ import java.util.Set;
         @JsonAlias("id") Integer idLibro,
         @JsonAlias("title") String title,
         @JsonAlias("authors") Set<Author> authors,
-        @JsonAlias("translators") List<AuthorData> translators,
+        @JsonAlias("translators") List<TranslatorData> translators,
         @JsonAlias("subjects") List<String> subjects,
         @JsonAlias("bookshelves") List<String> bookshelves,
         @JsonAlias("languages") List<String> languages,
         @JsonAlias("copyright") Boolean copyright,
         @JsonAlias("media_type") String media_type,
         @JsonAlias("download_count") Integer download_count
-    ){ }
+    ){
+
+
+}

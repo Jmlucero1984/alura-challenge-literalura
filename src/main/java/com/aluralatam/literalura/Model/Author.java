@@ -1,7 +1,10 @@
 
 package com.aluralatam.literalura.Model;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 import java.util.Set;
@@ -17,8 +20,10 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String birthYear;
-    private String deathYear;
+    @JsonAlias("birth_year")
+    private Integer birthYear;
+    @JsonAlias("death_year")
+    private Integer deathYear;
     private String type;
 
     @ManyToMany(mappedBy = "authors")
@@ -26,7 +31,7 @@ public class Author {
 
     public Author() {}
 
-    public Author(String name, String birthYear, String deathYear, String type) {
+    public Author(String name, Integer birthYear, Integer deathYear, String type) {
         this.name = name;
         this.birthYear = birthYear;
         this.deathYear = deathYear;
@@ -49,19 +54,19 @@ public class Author {
         this.name = name;
     }
 
-    public String getBirthYear() {
+    public Integer getBirthYear() {
         return birthYear;
     }
 
-    public void setBirthYear(String birthYear) {
+    public void setBirthYear(Integer birthYear) {
         this.birthYear = birthYear;
     }
 
-    public String getDeathYear() {
+    public Integer getDeathYear() {
         return deathYear;
     }
 
-    public void setDeathYear(String deathYear) {
+    public void setDeathYear(Integer deathYear) {
         this.deathYear = deathYear;
     }
 
@@ -76,9 +81,6 @@ public class Author {
 
     @Override
     public String toString() {
-        return "Name='" + name + '\'' +
-                ", BirthYear='" + birthYear + '\'' +
-                ", DeathYear='" + deathYear + '\'' +
-                ", Type='" + type + '\'';
+        return name + ", Año de Nacimiento: " + birthYear + ", Año de Muerte: " + deathYear;
     }
 }
