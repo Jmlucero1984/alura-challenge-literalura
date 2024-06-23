@@ -21,10 +21,15 @@ Tercer desafío de Java Backend de Allura Latam - Catálogo de Libros
 Para poder conectar con una base de datos local se deben configurar los siguientes parámetros en el archivo src/main/resources/application.properties.
 
 spring.datasource.url=jdbc:postgresql://{tu_host}:5455/{tu_base_de_datos}
+
 spring.datasource.username= {tu_nombre_usuario} 
+
 spring.datasource.password= {tu_password_usuario}
+
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
 spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
+
 
 🤘 Si tienes DOCKER puede rápidamente crear tu container de Postgres y levantarlo en local, pull de la imagen incluido, con la siguiente linea de comando en tu CMD o Bash 
 (reemplazando los parámetros en concordancia con lo detallado en el application.properties, obviamente si colocar las llaves {}, sólo las variables, siendo el tu_host el valor 'localhost')
