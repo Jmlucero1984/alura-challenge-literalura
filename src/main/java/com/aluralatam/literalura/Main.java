@@ -94,7 +94,6 @@ public class Main {
                 if (libro.isPresent()) {
                     System.out.println("LIBRO ENCONTRADO (PRESENTE TAMBIEN EN BASE DE DATOS LOCAL) ");
                     System.out.println(libro.get());
-
                 } else {
                 Book nuevolibro = new Book(datosLibro,autores);
                 bookRepository.save(nuevolibro);
@@ -102,10 +101,9 @@ public class Main {
                 System.out.println(nuevolibro);
                 }
             }
-        }else{
+        } else {
             System.out.println("No se encontraron datos con los registros ingresados");
         }
-
     }
 
     private void listarLibrosRegistrados() {
@@ -115,11 +113,9 @@ public class Main {
             libros.stream()
                     .sorted(Comparator.comparing(Book::getIdBook))
                     .forEach(System.out::println);
-        } else
-        {
+        } else {
             System.out.println("No hay libros registrados");
         }
-
     }
 
     private void listarAutoresRegistrados() {
@@ -129,7 +125,7 @@ public class Main {
             autores.stream()
                     .sorted(Comparator.comparing(Author::getBirthYear))
                     .forEach(System.out::println);
-        }else{
+        } else {
             System.out.println("No hay autores registrados");
         }
     }
@@ -143,7 +139,7 @@ public class Main {
             autores.stream()
                     .sorted(Comparator.comparing(Author::getBirthYear))
                     .forEach(System.out::println);
-        }else{
+        } else {
             System.out.println("No se encontraron autores vivos en el año: "+livingYear);
         }
     }
@@ -154,27 +150,22 @@ public class Main {
         List<String> languages = bookRepository.findAllLanguages();
         languages.stream().forEach(System.out::println);
         String idioma =  checkStringInput(sc,"Ingrese el idioma del libro: ");
-
         libros = bookRepository.findByLanguagesWhereOption(idioma);
         if (!libros.isEmpty()) {
             libros.stream()
                     .sorted(Comparator.comparing(Book::getIdBook))
                     .forEach(System.out::println);
-        }else{
+        } else {
             System.out.println("No se encontraron libros con el idioma ingresado");
         }
     }
 
-
-
-
-
     private Results getDatosLibro() {
         String titulo = checkStringInput(sc,"Ingrese el titulo de libro: ");
-
         var json = consumoAPI.fetchData(URL_BASE+titulo.replace(" ","+"));
         return convierteDatos.getData(json,Results.class);
     }
+    
     public static int checkIntInput(Scanner sc, int min, int max, String msg) {
         int input = 0;
         while (true) {
@@ -189,6 +180,7 @@ public class Main {
         }
         return input;
     }
+    
     public static String checkStringInput(Scanner sc, String msg) {
         String output;
         while (true) {
