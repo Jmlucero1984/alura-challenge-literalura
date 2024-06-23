@@ -4,11 +4,11 @@ Tercer desafío de Java Backend de Allura Latam - Catálogo de Libros
 
 ## 🎯 Funcionalidades implementadas
 - Menú de opciones listando las operaciones más recurrentes de consulta de libros y autores:
-  -> Buscar libros por título
-  -> Listar libros registrados
-  -> Listar autores registrados
-  -> Listar autores vivos en un determinado año
-  -> Listar libros por idioma (previa salida mostrando los idiomas disponibles según los libros ya registrados en la DB)
+   [x] Buscar libros por título
+   [x] Listar libros registrados
+   [x] Listar autores registrados
+   [x] Listar autores vivos en un determinado año
+   [x] Listar libros por idioma (previa salida mostrando los idiomas disponibles según los libros ya registrados en la DB)
 - Chequeo de entrada de datos erróneos
 - Persistencia permanente de datos consultados a la API en Postgres DB
  
