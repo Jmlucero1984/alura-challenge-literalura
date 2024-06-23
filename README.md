@@ -31,7 +31,7 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
 
 
-🤘 Si tienes DOCKER puede rápidamente crear tu container de Postgres y levantarlo en local, pull de la imagen incluido, con la siguiente linea de comando en tu CMD o Bash 
-(reemplazando los parámetros en concordancia con lo detallado en el application.properties, obviamente si colocar las llaves {}, sólo las variables, siendo el tu_host el valor 'localhost')
+🤘 Si tienes DOCKER puede rápidamente crear tu container de Postgres y levantarlo en local, pull de la imagen incluido, con la siguiente línea de comando en tu CMD o Bash 
+(reemplazando los parámetros en concordancia con lo detallado en el application.properties, obviamente sin colocar las llaves {}, sólo las variables, siendo tu_host el valor 'localhost')
 docker run --name {NOMBRE_DE_TU_CONTENEDOR} -p 5455:5432 -e POSTGRES_USER={tu_nombre_usuario} -e POSTGRES_PASSWORD={tu_password_usuario} -e POSTGRES_DB={tu_base_de_datos} -d postgres
  
