@@ -4,18 +4,18 @@ Tercer desafío de Java Backend de Allura Latam - Catálogo de Libros
 
 ## 🎯 Funcionalidades implementadas
 - Menú de opciones listando las operaciones más recurrentes de consulta de libros y autores:
-   [x] Buscar libros por título
-   [x] Listar libros registrados
-   [x] Listar autores registrados
-   [x] Listar autores vivos en un determinado año
-   [x] Listar libros por idioma (previa salida mostrando los idiomas disponibles según los libros ya registrados en la DB)
+ - [x] Buscar libros por título
+ - [x] Listar libros registrados
+ - [x] Listar autores registrados
+ - [x] Listar autores vivos en un determinado año
+ - [x] Listar libros por idioma (previa salida mostrando los idiomas disponibles según los libros ya registrados en la DB)
 - Chequeo de entrada de datos erróneos
 - Persistencia permanente de datos consultados a la API en Postgres DB
  
 ## 🔎 Requisitos
-JAVA 17
-Maven 3.3.2
-Git
+- JAVA 17
+- Maven 3.3.2
+- Git
 
 ## 🔩 Configuración
 Para poder conectar con una base de datos local se deben configurar los siguientes parámetros en el archivo src/main/resources/application.properties.
