@@ -1,5 +1,5 @@
 # alura-challenge-literalura
-Tercer desafío de Java Backend de Allura Latam - Catálogo de Libros
+Tercer desafío de Java Backend de Alura Latam - Catálogo de Libros
  
 
 ## 🎯 Funcionalidades implementadas
